@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - JTable Real time working using SignalR</title>
+
+    <!--Include css-->
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/jQueryUI")
+    @Styles.Render("~/Content/jTableUI")
+
+    <!--Inculde Js files-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUI")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jTable")
+    @Scripts.Render("~/bundles/signalR")
+    <script src="~/signalr/hubs" type="text/javascript"></script>
+    <style>
+        div.rectangular-area {
+            border: 1px solid #999;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: #EEE;
+        }
+
+        #TableUpdates {
+            height: 200px;
+            overflow: auto;
+        }
+
+        .event-deleted {
+            color: Red;
+        }
+
+        .event-updated {
+            color: green;
+        }
+
+        .event-created {
+            color: blue;
+        }
+
+        .event-message {
+            color: rgb(117, 117, 117);
+        }
+
+        p.demo-info {
+            font-size: 12px;
+            color: rgb(44, 50, 230);
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+</body>
+</html>
